@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block variopinto %}
+
+
+<form action="." method='POST'>{% csrf_token %}
+    {{ formulario.as_p }}
+    <button type="submit" value="Request feedback">Request feedback</button>
+
+</form>
+
+{% endblock %}
