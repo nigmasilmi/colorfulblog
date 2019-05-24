@@ -13,8 +13,9 @@
         <td><a href="{{ post.get_absolute_url }}"><li>{{ post.title }}</li></a></td>
         {% if request.user.is_authenticated%}
             {% if request.user.is_staff%}
-        <td><a href="{{ post.get_absolute_url_update }}">Edit Post</a></td>
-        <td><a href="{{ post.get_absolute_url_delete }}">Delete Post</a></td>
+        <td><a href="{{ post.get_absolute_url }}">Read</a></td>
+        <td><a href="{{ post.get_absolute_url_update }}">Edit</a></td>
+        <td><a href="{{ post.get_absolute_url_delete }}">Delete</a></td>
             {% endif %}
         {% endif %}
     </tr>

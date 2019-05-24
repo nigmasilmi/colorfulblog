@@ -34,6 +34,7 @@ def blog_post_detail_view(request, slug):
 
 def blog_post_list_view(request):
     qs = BlogPost.objects.all()
+    #qs = BlogPost.objects.all().published()
     title = 'Blogposts'
     template_name = 'list.html'
     context = {'object_list': qs}
