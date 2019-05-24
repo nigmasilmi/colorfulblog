@@ -21,7 +21,7 @@ from .views import blog_post_detail_view, blog_post_list_view, blog_post_create_
 urlpatterns = [
 
     path('', blog_post_list_view, name='blog_post_list'),
-    path('<str:slug>', blog_post_detail_view, name='post_detail'),
+    path('<str:slug>/', blog_post_detail_view, name='post_detail'),
     path('<str:slug>/edit', blog_post_update_view, name='update_post'),
     path('<str:slug>/delete', blog_post_delete_view, name='delete_post'),
 

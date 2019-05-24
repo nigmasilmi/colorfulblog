@@ -2,7 +2,23 @@
 
 {% block variopinto %}
 <h2>Estamos en la página inicial del blog</h2>
-{% for post in object_list %}
-<li>{{ post.title }}</li>
-{% endfor %}
+<div class="container table-responsive">
+<table class="table">
+    <thead>
+    <th>Post</th>
+    <th colspan="2">Options</th>
+    </thead>
+    {% for post in object_list %}
+    <tr>
+        <td><a href="{{ post.get_absolute_url }}"><li>{{ post.title }}</li></a></td>
+        {% if request.user.is_authenticated%}
+            {% if request.user.is_staff%}
+        <td><a href="{{ post.get_absolute_url_update }}">Edit Post</a></td>
+        <td><a href="{{ post.get_absolute_url_delete }}">Delete Post</a></td>
+            {% endif %}
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+    </div>
 {% endblock %}

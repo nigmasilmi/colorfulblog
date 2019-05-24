@@ -41,10 +41,11 @@
                     Administrar Blog
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{% url 'home' %}">All Posts</a>
-                    <a class="dropdown-item" href="{% url 'home' %}"></a>
+                    <a class="dropdown-item" href="{% url 'blog_post_list' %}">All Posts</a>
+                    <a class="dropdown-item" href="{% url 'create_post' %}">Create a new Post</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{% url 'home' %}">Something else here</a>
+                    <a class="dropdown-item" href="{% url 'home'  %}">Delete existing Post</a>
+                    <a class="dropdown-item" href="{% url 'home'  %}">Edit existing Post</a>
                 </div>
             </li>
             <li class="nav-item">

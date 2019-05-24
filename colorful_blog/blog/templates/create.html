@@ -1,9 +1,18 @@
-{% extends 'base.html' %}
+
+{% extends "base.html" %}
+
+
 
 {% block variopinto %}
-<h2>Estamos en Create New Post</h2>
-<form action="." method="POST">{% csrf_token %}
+
+{% if title %}
+    <h1>{{ title }}</h1>
+{% endif %}
+
+<form method='POST' action='.'> {% csrf_token %}
     {{ formulario.as_p }}
-    <button type="submit">Publicar Post</button>
+    <button type='submit'>Create Post</button>
 </form>
+
+
 {% endblock %}

@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block variopinto %}
-<h2>Estamos en Blogpost Delete</h2>
-<h3>title : {{ object.title }}</h3>
+<h2>You want to delete " {{ object.title }} "</h2>
+<h3>Is that correct?</h3>
+<form  method="POST">{% csrf_token %}
+    <button class="btn btn-danger" type="submit">Yes, sure. Delete.</button>
+</form>
     {% endblock %}
