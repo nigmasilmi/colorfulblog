@@ -10,7 +10,7 @@
     </thead>
     {% for post in object_list %}
     <tr>
-        <td><a href="{{ post.get_absolute_url }}"><li>{{ post.title }}</li></a></td>
+        <td><a href="{{ post.slug }}"><li>{{ post.title }}</li></a></td>
         {% if request.user.is_authenticated%}
             {% if request.user.is_staff%}
         <td><a href="{{ post.get_absolute_url }}">Read</a></td>
